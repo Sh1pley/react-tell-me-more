@@ -8,7 +8,7 @@ export default React.createClass({
       <div className='jumbotron col-sm-12 text-center' style={styles}> 
         <h1>
           Tell Me More</h1>
-        <p class='lead'>
+        <p className='lead'>
           This is an attempt at ReactJS..</p>
         <Link to='/login'>  
           <button type='button' className='btn btn-warning'>Do a thing</button>
