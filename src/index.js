@@ -11,7 +11,7 @@ render((
   <Router history={hashHistory}>
     <Route path="/" component={Main}>
       <IndexRoute component={Home}/>
-      <Route path='login' header="The hell are you?" component={PromptContainer}/>
+      <Route path='login' header="Where are you?" component={PromptContainer}/>
       <Route path='WhereAmI' component={LocationContainer} />
     </Route>
   </Router>

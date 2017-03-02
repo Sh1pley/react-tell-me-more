@@ -31,7 +31,7 @@ export default React.createClass({
             </div>
             <div className='form-group col-sm-4 col-sm-offset-4'>
               <button
-                className='btn btn-block btn-warning btn-lg'
+                className='btn btn-warning btn-lg'
                 type='submit'>
                 {this.props.header}
               </button>

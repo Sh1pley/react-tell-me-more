@@ -15,7 +15,6 @@ export default React.createClass({
         </Link>
 
 
-
       </div>
 
       
