@@ -10,7 +10,7 @@ render((
   <Router history={hashHistory}>
     <Route path="/" component={Main}>
       <IndexRoute component={Home}/>
-      <Route path='login' header="Where the hell are you?" component={PromptContainer}/>
+      <Route path='login' header="The hell are you?" component={PromptContainer}/>
       <Route path='signUp/:email' header="The hell are you?" component={PromptContainer}/>
     </Route>
   </Router>
