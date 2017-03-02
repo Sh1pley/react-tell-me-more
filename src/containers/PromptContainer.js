@@ -25,14 +25,18 @@ export default React.createClass({
     e.preventDefault();
     var username = this.state.username;
     var password = this.state.password;
+    
     this.setState({
       username: '',
       password: ''
     });
     this.context.router.push({
       pathname: '/whereAmI',
-      params: {
-        username: username,
+      query: {
+        username: username
+        // password: password
+      },
+      state: {
         password: password
       }
     })
