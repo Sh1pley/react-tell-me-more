@@ -10,8 +10,8 @@ render((
   <Router history={hashHistory}>
     <Route path="/" component={Main}>
       <IndexRoute component={Home}/>
-      <Route path='login' component={PromptContainer}/>
-      <Route path='signUp/:email' component={PromptContainer}/>
+      <Route path='login' header="Who in the hell are you?" component={PromptContainer}/>
+      <Route path='signUp/:email' header="Who in the hell are you?" component={PromptContainer}/>
     </Route>
   </Router>
 ), document.getElementById('root'))
