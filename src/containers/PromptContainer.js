@@ -1,34 +1,51 @@
 import React from 'react';
-import styles from '../styles'
+import Prompt from '../components/Prompt';
 
 export default React.createClass({
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
+  getInitialState() {
+    return {
+      username: '',
+      password: ''
+    }
+  },
+  handleUpdatePassword(e) {
+    this.setState({
+      password: e.target.value
+    })
+  },
+  handleUpdateUser(e) {
+    this.setState({
+      username: e.target.value
+    })
+  },
+  handleSubmitUser(e) {
+    e.preventDefault();
+    var username = this.state.username;
+    var password = this.state.password;
+    this.setState({
+      username: '',
+      password: ''
+    });
+    this.context.router.push({
+      pathname: '/whereAmI',
+      params: {
+        username: username,
+        password: password
+      }
+    })
+  },
   render() {
-    console.log(this)
     return (
-      <div className='jumbotron col-sm-8 col-sm-offset-2 text-center' style={styles.transparentBg}>
-        <h1>Let's Do This!</h1>
-        <div className='col-sm-12'>
-          <form>
-            <div className='form-group'>
-              <input
-                className='form-control'
-                placeholder='email@address.com'
-                type='text'/>
-              <input
-                className='form-control'
-                placeholder='********'
-                type='password'/>
-            </div>
-            <div className='form-group col-sm-4 col-sm-offset-4'>
-              <button
-                className='btn btn-block btn-warning btn-lg'
-                type='submit'>
-                {this.props.route.header}
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
+      <Prompt 
+        onSubmitUser={this.handleSubmitUser} 
+        onUpdateUser={this.handleUpdateUser}
+        onUpdatePassword={this.handleUpdatePassword}
+        header={this.props.route.header}
+        username={this.state.username} />
+
     )
   }
 })

@@ -11,7 +11,7 @@ export default React.createClass({
         <p class='lead'>
           This is an attempt at ReactJS..</p>
         <Link to='/login'>  
-          Let's do a thing
+          <button type='button' className='btn btn-warning'>Do a thing</button>
         </Link>
 
 
